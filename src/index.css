@@ -26,3 +26,16 @@ h1{
 p{
   font-size: 16px;
 }
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background:#E5E5E5;
+}

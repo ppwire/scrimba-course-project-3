@@ -1,4 +1,4 @@
-import AirbnbLogo from '../images/airbnb-1.png'
+import AirbnbLogo from '/images/airbnb-1.png'
 export default function Nav() {
    return (
       <nav>
