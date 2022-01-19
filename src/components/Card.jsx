@@ -1,21 +1,29 @@
 import Star from '/images/star.png'
 
-export default function Card({ imgName, score, visiter, country, description, price }) {
+export default function Card({ item }) {
+
+   let badgeText = ""
+   if (item.remain <= 0) {
+      badgeText = "SOLD OUT"
+   } else if (item.location === "ONLINE") {
+      badgeText = "ONLINE"
+   }
 
    return (
       <div className="card">
-         <img src={`/images/${imgName}`} alt="" className="card-img" />
+         {badgeText && <div className="card-badge">{badgeText}</div>}
+         <img src={`/images/${item.imgName}`} alt="" className="card-img" />
          <div className="card-header">
             <img src={Star} alt="" className="card-star" />
-            <span>{score}</span>
-            <span className="gray">({visiter}) •</span>
-            <span className="gray"> {country} </span>
+            <span>{item.score}</span>
+            <span className="gray">({item.visiter}) •</span>
+            <span className="gray"> {item.country} </span>
          </div>
          <div className="gray card-text">
-            <p>{description}</p>
+            <p>{item.description}</p>
             <p>
                <span className="bold ">
-                  From {price} &nbsp;
+                  From {item.price} &nbsp;
                </span>
                / person</p>
          </div>

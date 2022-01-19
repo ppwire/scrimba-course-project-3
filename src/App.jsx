@@ -12,6 +12,8 @@ function App() {
       country: 'USA',
       description: 'Life lessons with Katie Zaferes',
       price: 136,
+      remain: 0,
+      location: 'OFFLINE'
     },
     {
       imgName: 'card-2.png',
@@ -20,6 +22,8 @@ function App() {
       country: 'USA',
       description: 'Learn wedding photography',
       price: 125,
+      remain: 10,
+      location: 'ONLINE'
     },
     {
       imgName: 'card-3.png',
@@ -28,6 +32,8 @@ function App() {
       country: 'USA',
       description: 'Group Mountain Biking',
       price: 50,
+      remain: 12,
+      location: 'OFFLINE'
     }
 
   ]
@@ -36,17 +42,12 @@ function App() {
       <Nav></Nav>
       <main>
         <Hero></Hero>
-        <div className="content">
+        <div className="card-list">
           {
             mocks.map((mock, index) => {
               return <Card
                 key={index}
-                imgName={mock.imgName}
-                score={mock.score}
-                visiter={mock.visiter}
-                country={mock.country}
-                description={mock.description}
-                price={mock.price}
+                item={mock}
               ></Card>
             })
           }

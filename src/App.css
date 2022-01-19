@@ -49,6 +49,7 @@ main {
 
 .card {
   width: 20rem;
+  position: relative;
 }
 
 .gray {
@@ -80,7 +81,19 @@ main {
   color: black;
 }
 
-.content {
+.card-list {
   display: flex;
+  flex-wrap :nowrap;
   gap: .8rem;
+  overflow-x: auto;
+}
+
+.card-badge{
+  position: absolute;
+  top:0.5rem;
+  left:0.5rem;
+  font-weight: 600;
+  padding: 3% 5%;
+  background-color:white;
+  border-radius:0.2rem;
 }
